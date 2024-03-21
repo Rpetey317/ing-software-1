@@ -36,7 +36,7 @@ fechaDeNacimiento
 	^July/7/1945! !
 
 
-!AdeleGoldberg class methodsFor: '--** private fileout/in **--' stamp: 'RABG 3/19/2024 16:38:16'!
+!AdeleGoldberg class methodsFor: '--** private fileout/in **--' stamp: 'RABG 3/21/2024 00:23:44'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 
@@ -132,5 +132,108 @@ JohnVonNeumann class
 fechaDeNacimiento
 
 	^December/28/1903! !
+
+
+!classDefinition: #Eminencia category: #Cuestionarios!
+Object subclass: #Eminencia
+	instanceVariableNames: 'fechaDeNacimiento nombre'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Cuestionarios'!
+
+!Eminencia methodsFor: 'initialization' stamp: 'RABG 3/20/2024 22:57:12'!
+inicializarCon: unNombre y: unaFechaDeNacimiento
+
+    nombre := unNombre.
+
+    fechaDeNacimiento := unaFechaDeNacimiento.! !
+
+!Eminencia methodsFor: 'initialization' stamp: 'RABG 3/20/2024 22:53:26'!
+initialize
+
+    nombre := 'Alan Kay'.
+
+    fechaDeNacimiento := May/17/1940! !
+
+
+!Eminencia methodsFor: 'info personal' stamp: 'RABG 3/20/2024 22:39:36'!
+esMayorQue: unaPersona
+
+	| diferenciaDeEdad |
+
+	diferenciaDeEdad := self fechaDeNacimiento distanceTo: unaPersona fechaDeNacimiento.
+
+	^diferenciaDeEdad positive! !
+
+!Eminencia methodsFor: 'info personal' stamp: 'RABG 3/20/2024 22:52:20'!
+fechaDeNacimiento
+
+	^fechaDeNacimiento! !
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+!classDefinition: 'Eminencia class' category: #Cuestionarios!
+Eminencia class
+	instanceVariableNames: ''!
+
+!Eminencia class methodsFor: 'instance creation' stamp: 'RABG 3/20/2024 22:59:25'!
+llamada: unNombre nacidaEl: unaFecha
+
+
+
+	^self new inicializarCon: unNombre y: unaFecha! !
+
+
+!classDefinition: #Vehiculo category: #Cuestionarios!
+Object subclass: #Vehiculo
+	instanceVariableNames: 'combustible'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Cuestionarios'!
+
+!Vehiculo methodsFor: 'mantenimiento' stamp: 'RABG 3/20/2024 23:14:49'!
+cargarCombustible: cantidadDeCombustible
+
+	combustible := cantidadDeCombustible ! !
+
+
+!Vehiculo methodsFor: 'informacion' stamp: 'RABG 3/20/2024 23:16:54'!
+cantidadDeRuedas
+
+	self subclassResponsibility! !
+
+
+!classDefinition: #Auto category: #Cuestionarios!
+Vehiculo subclass: #Auto
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Cuestionarios'!
+
+!Auto methodsFor: 'informacion' stamp: 'RABG 3/20/2024 23:10:10'!
+cantidadDeRuedas
+
+	^4! !
+
+
+!Auto methodsFor: 'acciones' stamp: 'RABG 3/20/2024 23:10:14'!
+abrirBaul! !
+
+
+!classDefinition: #Moto category: #Cuestionarios!
+Vehiculo subclass: #Moto
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Cuestionarios'!
+
+!Moto methodsFor: 'informacion' stamp: 'RABG 3/20/2024 23:10:52'!
+cantidadDeRuedas
+
+	^2! !
+
+
+!Moto methodsFor: 'acciones' stamp: 'RABG 3/20/2024 23:10:46'!
+abrirBaul! !
 
 AdeleGoldberg initializeAfterFileIn!
